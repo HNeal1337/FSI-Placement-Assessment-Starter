@@ -7,6 +7,7 @@ let yourName = "Hayden Neal" // HINT: Replace this with your own name!
 let gb = 0 // Gingerbread
 let cc = 0 // Chocolate Chip
 let sugar = 0 // Sugar Sprinkle
+let total = 0 
 
 // selecting the element with an id of credit
 const credit = document.querySelector('#credit')
@@ -36,6 +37,9 @@ let ccMinusCell = document.querySelector("#qty-cc")
 const sugarMinusBtn = document.querySelector('#minus-sugar')
 
 let sugarMinusCell = document.querySelector("#qty-sugar")
+
+const qty_total = document.querySelector('#qty-total')
+
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
 
@@ -81,8 +85,10 @@ sugarMinusBtn.addEventListener('click', function(e) {
     let sugarMinusCount = parseInt(sugarMinusCell.textContent);
     sugarMinusCount = sugarMinusCount - 1;
     sugarMinusCell.textContent = sugarMinusCount;
-    localStorage.setItem('qty-sugar',sugarMinusCount)
+    localStorage.setItem('qty-sugar')
 });
+
+qty_total = (gbPlusBtn + ccPlusBtn + sugarPlusBtn + gbMinusBtn + ccMinusBtn + sugarMinusBtn);
 // HINT: You can delete this console.log after you no longer need it!
 console.log('Gingerbread + button was clicked!')
 
