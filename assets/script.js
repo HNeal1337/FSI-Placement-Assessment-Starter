@@ -48,7 +48,7 @@ gbPlusBtn.addEventListener('click', function(e) {
     gb = gb + 1;
     gbPlusCell.textContent = gb;
     localStorage.setItem('qty-gb',gb)
-    let sum = gb + cc + sugar
+    let sum = (gb + cc + sugar)
     qtyTotal.textContent=sum
 });
 
@@ -57,7 +57,7 @@ ccPlusBtn.addEventListener('click', function(e) {
     cc = cc + 1;
     ccPlusCell.textContent = cc;
     localStorage.setItem('qty-cc',cc)
-    let sum = gb+cc+sugar
+    let sum = (gb + cc + sugar)
     qtyTotal.textContent=sum
 });
 
@@ -66,7 +66,7 @@ sugarPlusBtn.addEventListener('click', function(e) {
     sugar = sugar + 1;
     sugarPlusCell.textContent = sugar;
     localStorage.setItem('qty-sugar',sugar)
-    let sum = gb+cc+sugar
+    let sum = (gb + cc + sugar)
     qtyTotal.textContent=sum
 });
 
@@ -77,7 +77,7 @@ gbMinusBtn.addEventListener('click', function(e) {
     gb = gb - 1;
     gbMinusCell.textContent = gb;
     localStorage.setItem('qty-gb',gb)
-    let sum = gb+cc+sugar
+    let sum = (gb + cc + sugar)
     qtyTotal.textContent=sum
 });
 
@@ -86,7 +86,7 @@ ccMinusBtn.addEventListener('click', function(e) {
     cc = cc - 1;
     ccMinusCell.textContent = cc;
     localStorage.setItem('qty-cc',cc)
-    let sum = gb+cc+sugar
+    let sum = (gb + cc + sugar)
     qtyTotal.textContent=sum
 });
 
