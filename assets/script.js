@@ -7,8 +7,7 @@ let yourName = "Hayden Neal" // HINT: Replace this with your own name!
 let gb = 0 // Gingerbread
 let cc = 0 // Chocolate Chip
 let sugar = 0 // Sugar Sprinkle
-let total = 0 
-
+let total = 0
 // selecting the element with an id of credit
 const credit = document.querySelector('#credit')
 // selecting the element with an id of add-gb
@@ -38,57 +37,67 @@ const sugarMinusBtn = document.querySelector('#minus-sugar')
 
 let sugarMinusCell = document.querySelector("#qty-sugar")
 
-const qty_total = document.querySelector('#qty-total')
+let qtyTotal = document.querySelector('#qty-total')
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
 
 // Event listener for clicks on the "+" button for Gingerbread cookies
 gbPlusBtn.addEventListener('click', function(e) {
-    let gbPlusCount = parseInt(gbPlusCell.textContent);
-    gbPlusCount = gbPlusCount + 1;
-    gbPlusCell.textContent = gbPlusCount;
-    localStorage.setItem('qty-gb',gbPlusCount)
+    let gb = parseInt(gbPlusCell.textContent);
+    gb = gb + 1;
+    gbPlusCell.textContent = gb;
+    localStorage.setItem('qty-gb',gb)
+    let sum = gb + cc + sugar
+    qtyTotal.textContent=sum
 });
 
 ccPlusBtn.addEventListener('click', function(e) {
-    let ccPlusCount = parseInt(ccPlusCell.textContent);
-    ccPlusCount = ccPlusCount + 1;
-    ccPlusCell.textContent = ccPlusCount;
-    localStorage.setItem('qty-cc',ccPlusCount)
+    let cc = parseInt(ccPlusCell.textContent);
+    cc = cc + 1;
+    ccPlusCell.textContent = cc;
+    localStorage.setItem('qty-cc',cc)
+    let sum = gb+cc+sugar
+    qtyTotal.textContent=sum
 });
 
 sugarPlusBtn.addEventListener('click', function(e) {
-    let sugarPlusCount = parseInt(sugarPlusCell.textContent);
-    sugarPlusCount = sugarPlusCount + 1;
-    sugarPlusCell.textContent = sugarPlusCount;
-    localStorage.setItem('qty-sugar',sugarPlusCount)
+    let sugar = parseInt(sugarPlusCell.textContent);
+    sugar = sugar + 1;
+    sugarPlusCell.textContent = sugar;
+    localStorage.setItem('qty-sugar',sugar)
+    let sum = gb+cc+sugar
+    qtyTotal.textContent=sum
 });
 
 
 
 gbMinusBtn.addEventListener('click', function(e) {
-    let gbMinusCount = parseInt(gbMinusCell.textContent);
-    gbMinusCount = gbMinusCount - 1;
-    gbMinusCell.textContent = gbMinusCount;
-    localStorage.setItem('qty-gb',gbMinusCount)
+    let gb = parseInt(gbMinusCell.textContent);
+    gb = gb - 1;
+    gbMinusCell.textContent = gb;
+    localStorage.setItem('qty-gb',gb)
+    let sum = gb+cc+sugar
+    qtyTotal.textContent=sum
 });
 
 ccMinusBtn.addEventListener('click', function(e) {
-    let ccMinusCount = parseInt(ccMinusCell.textContent);
-    ccMinusCount = ccMinusCount - 1;
-    ccMinusCell.textContent = ccMinusCount;
-    localStorage.setItem('qty-cc',ccMinusCount)
+    let cc = parseInt(ccMinusCell.textContent);
+    cc = cc - 1;
+    ccMinusCell.textContent = cc;
+    localStorage.setItem('qty-cc',cc)
+    let sum = gb+cc+sugar
+    qtyTotal.textContent=sum
 });
 
 sugarMinusBtn.addEventListener('click', function(e) {
-    let sugarMinusCount = parseInt(sugarMinusCell.textContent);
-    sugarMinusCount = sugarMinusCount - 1;
-    sugarMinusCell.textContent = sugarMinusCount;
-    localStorage.setItem('qty-sugar')
+    let sugar = parseInt(sugarMinusCell.textContent);
+    sugar = sugar - 1;
+    sugarMinusCell.textContent = sugar;
+    localStorage.setItem('qty-sugar',sugar)
+    let sum = (gb + cc + sugar)
+    qtyTotal.textContent=sum
 });
-
-qty_total = (gbPlusBtn + ccPlusBtn + sugarPlusBtn + gbMinusBtn + ccMinusBtn + sugarMinusBtn);
 // HINT: You can delete this console.log after you no longer need it!
 console.log('Gingerbread + button was clicked!')
 
